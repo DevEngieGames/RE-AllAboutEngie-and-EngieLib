@@ -1,6 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/engielib",
   "promos": {
+    "1.21.8-latest": "0.0.2",
+    "1.21.8-recommended": "0.0.2"
     "1.21.4-latest": "0.0.2",
     "1.21.4-recommended": "0.0.2",
     "1.21.1-latest": "0.0.2",
