@@ -19,12 +19,13 @@ assignees: DevEngieGames
 - [ ] 1.20.1
 - [ ] 1.19.4
 - [ ] 1.19.2
+- [ ] Resourcepack
 
 **Describe the bug**
 (Describe the bug)
 
 **To Reproduce**
-(Add the steps here.)
+(Not required to add the steps here if it's anything resourcepack related.)
 
 **Screenshots/Recording (Optional)**
-If applicable, add screenshots to help explain your problem.
+(Required if resourepack related, add screenshots to help explain the bug.)
