@@ -1,7 +1,3 @@
-# Welcome to the repository of both RE:All About Engie and EngieLib!
-## To PROPERLY report issues for either mod, PLEASE use their proper labels.
-### EngieLib updates can be found under the releases page!
-### If you're having difficulties trying to install the mods, you can look it up.
-## If you want to find the resourcepack compatibility for EngieLib and RE:All About Engie do the following:
-### Change the branch to "Resourcepacks" and find the right resourcepack for the compatibility, the name of the resourcepack *should* tell you what it is.
-### THE COMPATIBILITY RESOURCEPACKS WILL NOT BE UPLOADED TO MODRINTH.
+# Welcome to the Resourcepacks branch of both RE:All About Engie and EngieLib!
+## THE COMPATIBILITY RESOURCEPACKS WILL NOT BE UPLOADED TO MODRINTH.
+### If you're having issues on figuring out on how to install these, look it up.
