@@ -13,7 +13,7 @@
 
 ## Modrinth:
 - ### Download the resourcepack that you want by clicking on the file name here on GitHub, and then clicking the download button.
-- ### Drag the pack from wherever you saved the file into your modrinth modpack of your choice.
+- ### Drag the pack from wherever you saved the file into your modrinth modpack of your choice that has the mod installed.
 
 ## CurseForge:
 - ### Got no idea, you might have to drop the pack in as an override..
