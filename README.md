@@ -10,3 +10,10 @@
 - ### Download the resourcepack that you want by clicking on the file name here on GitHub, and then clicking the download button.
 - ### If you can chose where to save the file, copy the path to your "resourcepacks" folder and save it to there.
 - ### If not, open another tab of File Explorer to where the file was downloaded, and then drag it into the "resourcepacks" folder.
+
+## Modrinth:
+- ### Download the resourcepack that you want by clicking on the file name here on GitHub, and then clicking the download button.
+- ### Drag the pack from wherever you saved the file into your modrinth modpack of your choice.
+
+## CurseForge:
+- ### Got no idea, you might have to drop the pack in as an override..
