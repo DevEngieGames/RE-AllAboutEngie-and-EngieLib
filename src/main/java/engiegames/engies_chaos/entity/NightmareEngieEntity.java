@@ -49,7 +49,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class NightmareEngieEntity extends Monster {
 	public NightmareEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(EngiesChaosModEntities.NIGHTMARE_ENGIE.get(), world);
+		this(EngiesChaosModEntities.NIGHTMARE_HOSTILE_ENGIE.get(), world);
 	}
 
 	public NightmareEngieEntity(EntityType<NightmareEngieEntity> type, Level world) {
@@ -213,7 +213,7 @@ public class NightmareEngieEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.NIGHTMARE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+		SpawnPlacements.register(EngiesChaosModEntities.NIGHTMARE_HOSTILE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

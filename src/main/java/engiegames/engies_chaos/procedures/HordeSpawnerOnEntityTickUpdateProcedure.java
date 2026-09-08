@@ -343,7 +343,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index13 = 0; index13 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index13++) {
 							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new NightmareEngieEntity(EngiesChaosModEntities.NIGHTMARE_ENGIE.get(), _level);
+								Entity entityToSpawn = new NightmareEngieEntity(EngiesChaosModEntities.NIGHTMARE_HOSTILE_ENGIE.get(), _level);
 								entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
 									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
@@ -352,7 +352,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 						}
 					} else if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount == 0) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new NightmareEngieEntity(EngiesChaosModEntities.NIGHTMARE_ENGIE.get(), _level);
+							Entity entityToSpawn = new NightmareEngieEntity(EngiesChaosModEntities.NIGHTMARE_HOSTILE_ENGIE.get(), _level);
 							entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
 								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
@@ -495,7 +495,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index20 = 0; index20 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index20++) {
 							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new InsanityEngieEntity(EngiesChaosModEntities.INSANITY_ENGIE.get(), _level);
+								Entity entityToSpawn = new InsanityEngieEntity(EngiesChaosModEntities.INSANITY_HOSTILE_ENGIE.get(), _level);
 								entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
 									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
@@ -504,7 +504,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 						}
 					} else if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount == 0) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new InsanityEngieEntity(EngiesChaosModEntities.INSANITY_ENGIE.get(), _level);
+							Entity entityToSpawn = new InsanityEngieEntity(EngiesChaosModEntities.INSANITY_HOSTILE_ENGIE.get(), _level);
 							entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
 								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
@@ -647,7 +647,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index27 = 0; index27 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index27++) {
 							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new EngiePocEngieEntity(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), _level);
+								Entity entityToSpawn = new EngiePocEngieEntity(EngiesChaosModEntities.ENGIE_POC_HOSTILE_ENGIE.get(), _level);
 								entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
 									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
@@ -656,7 +656,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 						}
 					} else if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount == 0) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new EngiePocEngieEntity(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), _level);
+							Entity entityToSpawn = new EngiePocEngieEntity(EngiesChaosModEntities.ENGIE_POC_HOSTILE_ENGIE.get(), _level);
 							entityToSpawn.moveTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, world.getRandom().nextFloat() * 360F, 0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
 								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);

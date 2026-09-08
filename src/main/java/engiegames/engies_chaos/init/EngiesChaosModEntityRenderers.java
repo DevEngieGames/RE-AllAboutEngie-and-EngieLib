@@ -95,7 +95,14 @@ import engiegames.engies_chaos.client.renderer.EngiePocEnragedEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngiePocEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngiePocAngryEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesOutragedEngieRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesMonstrosityEngieRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesMadEngieRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesHostileEngieRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesHostileBiblicallyAccurateEngieRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesEnragedEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesDetectiveRenderer;
+import engiegames.engies_chaos.client.renderer.EngieGamesAngryEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngiRenderer;
 import engiegames.engies_chaos.client.renderer.DoomsDayRenderer;
 import engiegames.engies_chaos.client.renderer.DoomsDayHostileRenderer;
@@ -206,8 +213,8 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_ENRAGED_ENGIE.get(), InsanityEnragedEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_OUTRAGED_ENGIE.get(), InsanityOutragedEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_MONSTROSITY_ENGIE.get(), InsanityMonstrosityEngieRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.NIGHTMARE_ENGIE.get(), NightmareEngieRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_ENGIE.get(), InsanityEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.NIGHTMARE_HOSTILE_ENGIE.get(), NightmareEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_HOSTILE_ENGIE.get(), InsanityEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.INSANITY_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), InsanityHostileBiblicallyAccurateEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.HOSTILE_ENGIE.get(), HsotileEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.RARE_SHARKO.get(), RareSharkoRenderer::new);
@@ -249,7 +256,14 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_OUTRAGED_ENGIE.get(), EngiePocOutragedEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_MONSTROSITY_ENGIE.get(), EngiePocMonstrosityEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngiePocHostileBiblicallyAccurateEngieRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), EngiePocEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_HOSTILE_ENGIE.get(), EngiePocEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.HORDE_SPAWNER.get(), HordeSpawnerRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_MAD_ENGIE.get(), EngieGamesMadEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_ANGRY_ENGIE.get(), EngieGamesAngryEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_ENRAGED_ENGIE.get(), EngieGamesEnragedEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_OUTRAGED_ENGIE.get(), EngieGamesOutragedEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieRenderer::new);
 	}
 }

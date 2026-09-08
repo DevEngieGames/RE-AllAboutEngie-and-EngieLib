@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "[NIGHTMARE] Enraged Engie",
     "mobLabel": "",
-    "mobModelName": "Modelnightmarehostile",
-    "mobModelTexture": "nightmareenraged_new.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nightmareenragedengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

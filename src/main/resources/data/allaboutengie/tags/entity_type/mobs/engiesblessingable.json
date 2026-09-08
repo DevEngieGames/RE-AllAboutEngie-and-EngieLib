@@ -5,7 +5,9 @@
     "stray",
     "cave_spider",
     "skeleton",
+    "engies_chaos:enraged_tnt",
     "ghast",
+    "engies_chaos:enraged_normal",
     "blaze",
     "zombie_villager",
     {
@@ -39,6 +41,7 @@
     "piglin",
     "creeper",
     "zombie",
+    "engies_chaos:enraged_speed",
     "hoglin",
     "enderman",
     "magma_cube",

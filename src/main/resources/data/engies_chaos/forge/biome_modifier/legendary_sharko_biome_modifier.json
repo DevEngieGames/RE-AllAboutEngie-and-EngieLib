@@ -5,7 +5,7 @@
   },
   "spawners": {
     "type": "engies_chaos:legendary_sharko",
-    "weight": 20,
+    "weight": 4,
     "minCount": 1,
     "maxCount": 4
   }

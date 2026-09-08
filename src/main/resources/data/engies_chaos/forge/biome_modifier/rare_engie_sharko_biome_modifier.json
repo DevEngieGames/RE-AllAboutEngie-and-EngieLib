@@ -5,7 +5,7 @@
   },
   "spawners": {
     "type": "engies_chaos:rare_engie_sharko",
-    "weight": 2,
+    "weight": 1,
     "minCount": 1,
     "maxCount": 4
   }

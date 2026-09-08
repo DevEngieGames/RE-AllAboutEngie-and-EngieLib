@@ -155,7 +155,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningCondition": {
-      "name": "DoomsDayNaturalEntitySpawningCondition"
+      "name": "HostileDoomsdayEntitySpawningCondition"
     },
     "spawningProbability": 15,
     "mobSpawningType": "monster",

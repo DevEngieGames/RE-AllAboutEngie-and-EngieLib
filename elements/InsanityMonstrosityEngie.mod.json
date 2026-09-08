@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "[INSANITY] Monstrosity Engie",
     "mobLabel": "",
-    "mobModelName": "Modelinsanitymonstrosity",
-    "mobModelTexture": "insanitymonstrosity.png",
+    "mobModelName": "Modelinsanityhostile",
+    "mobModelTexture": "insanitymonstrosityengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -26,7 +26,7 @@
     "modelLayers": [],
     "animations": [],
     "modelWidth": 0.6,
-    "modelHeight": 1.9000000000000001,
+    "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,

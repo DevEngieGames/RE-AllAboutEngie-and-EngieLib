@@ -5,8 +5,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
-import java.util.Calendar;
-
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.entity.BiblicallyAccurateEngieEntity;
 
@@ -22,17 +20,8 @@ public class BiblicallyAccurateEngieTickProcedure {
 				_livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(100);
 		}
 		if (EngiesChaosModVariables.MapVariables.get(world).seasonautumn == true || EngiesChaosModVariables.MapVariables.get(world).seasonwinter == true) {
-			if (Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
-				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, false);
-				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_holloweened, true);
-			} else if (!(Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25)) {
-				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, true);
-				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_holloweened, false);
-			}
+			if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, true);
 		} else {
 			if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, false);

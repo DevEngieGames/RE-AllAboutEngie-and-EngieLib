@@ -5,7 +5,7 @@
     "mobName": "[INSANITY] Outraged Engie",
     "mobLabel": "",
     "mobModelName": "Modelinsanityhostile",
-    "mobModelTexture": "insanityoutraged.png",
+    "mobModelTexture": "insanityoutragedengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

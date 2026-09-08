@@ -36,9 +36,9 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
-import engiegames.engies_chaos.procedures.TheEndNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.TheEndHostileEntityDiesProcedure;
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
+import engiegames.engies_chaos.procedures.HostileTheEndEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -196,7 +196,7 @@ public class TheEndHostileEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return TheEndNaturalEntitySpawningConditionProcedure.execute(world);
+			return HostileTheEndEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

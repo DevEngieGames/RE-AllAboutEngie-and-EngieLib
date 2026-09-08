@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.NightmareMonstrosityEngieEntity;
-import engiegames.engies_chaos.client.model.Modelnightmaremon;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class NightmareMonstrosityEngieRenderer extends MobRenderer<NightmareMonstrosityEngieEntity, Modelnightmaremon<NightmareMonstrosityEngieEntity>> {
+public class NightmareMonstrosityEngieRenderer extends MobRenderer<NightmareMonstrosityEngieEntity, Modelhostile<NightmareMonstrosityEngieEntity>> {
 	public NightmareMonstrosityEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelnightmaremon<NightmareMonstrosityEngieEntity>(context.bakeLayer(Modelnightmaremon.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelhostile<NightmareMonstrosityEngieEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
@@ -28,6 +28,6 @@ public class NightmareMonstrosityEngieRenderer extends MobRenderer<NightmareMons
 
 	@Override
 	public ResourceLocation getTextureLocation(NightmareMonstrosityEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/nightmaremon_new.png");
+		return new ResourceLocation("engies_chaos:textures/entities/nightmaremonstrosityengie.png");
 	}
 }

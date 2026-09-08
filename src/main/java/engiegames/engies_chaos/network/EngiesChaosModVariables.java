@@ -502,6 +502,7 @@ public class EngiesChaosModVariables {
 		public boolean traderneedcount = false;
 		public double random25minutetimer = 0;
 		public boolean mobbasehpmulttoggle = false;
+		public boolean engiestruewrath = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -749,6 +750,7 @@ public class EngiesChaosModVariables {
 			traderneedcount = nbt.getBoolean("traderneedcount");
 			random25minutetimer = nbt.getDouble("random25minutetimer");
 			mobbasehpmulttoggle = nbt.getBoolean("mobbasehpmulttoggle");
+			engiestruewrath = nbt.getBoolean("engiestruewrath");
 		}
 
 		@Override
@@ -992,6 +994,7 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("traderneedcount", traderneedcount);
 			nbt.putDouble("random25minutetimer", random25minutetimer);
 			nbt.putBoolean("mobbasehpmulttoggle", mobbasehpmulttoggle);
+			nbt.putBoolean("engiestruewrath", engiestruewrath);
 			return nbt;
 		}
 

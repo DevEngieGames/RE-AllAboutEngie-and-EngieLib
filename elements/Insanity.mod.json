@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Insanity",
     "mobLabel": "",
-    "mobModelName": "ModelEngieGames",
+    "mobModelName": "Modelinsanity",
     "mobModelTexture": "insanity.png",
     "transparentModelCondition": {
       "fixedValue": false

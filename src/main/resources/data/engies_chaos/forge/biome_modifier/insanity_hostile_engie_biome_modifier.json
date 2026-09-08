@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "engies_chaos:insanity_hostile_engie",
+    "weight": 1,
+    "minCount": 4,
+    "maxCount": 16
+  }
+}

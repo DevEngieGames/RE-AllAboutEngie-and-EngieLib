@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.NightmareOutragedEngieEntity;
-import engiegames.engies_chaos.client.model.Modelnightmarehostile;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class NightmareOutragedEngieRenderer extends MobRenderer<NightmareOutragedEngieEntity, Modelnightmarehostile<NightmareOutragedEngieEntity>> {
+public class NightmareOutragedEngieRenderer extends MobRenderer<NightmareOutragedEngieEntity, Modelhostile<NightmareOutragedEngieEntity>> {
 	public NightmareOutragedEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelnightmarehostile<NightmareOutragedEngieEntity>(context.bakeLayer(Modelnightmarehostile.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelhostile<NightmareOutragedEngieEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
@@ -28,6 +28,6 @@ public class NightmareOutragedEngieRenderer extends MobRenderer<NightmareOutrage
 
 	@Override
 	public ResourceLocation getTextureLocation(NightmareOutragedEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/nightmareoutraged_new.png");
+		return new ResourceLocation("engies_chaos:textures/entities/nightmareoutragedengie.png");
 	}
 }

@@ -5,7 +5,7 @@
     "mobName": "[INSANITY] Mad Engie",
     "mobLabel": "",
     "mobModelName": "Modelinsanityhostile",
-    "mobModelTexture": "insanitymad.png",
+    "mobModelTexture": "insanitymadengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

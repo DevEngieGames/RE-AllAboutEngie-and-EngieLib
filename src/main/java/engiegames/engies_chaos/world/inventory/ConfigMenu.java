@@ -26,7 +26,7 @@ public class ConfigMenu extends AbstractContainerMenu implements EngiesChaosModM
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 28)
+			if (!this.containsKey(key) && this.size() >= 29)
 				return null;
 			return super.put(key, value);
 		}

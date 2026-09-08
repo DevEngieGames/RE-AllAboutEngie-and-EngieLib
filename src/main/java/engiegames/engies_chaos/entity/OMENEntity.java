@@ -159,7 +159,7 @@ public class OMENEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return OMENSpawningCondProcedure.execute();
+			return OMENSpawningCondProcedure.execute(world);
 		});
 	}
 

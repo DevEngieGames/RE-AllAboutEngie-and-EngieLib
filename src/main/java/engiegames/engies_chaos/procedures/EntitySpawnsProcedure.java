@@ -95,18 +95,18 @@ public class EntitySpawnsProcedure {
 						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty <= 0) {
 							if (entity instanceof LivingEntity _livingEntity37 && _livingEntity37.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 								_livingEntity37.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
-										((entity instanceof LivingEntity _livingEntity36 && _livingEntity36.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity36.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+										((entity instanceof LivingEntity _livingEntity36 && _livingEntity36.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity36.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 4));
 							if (entity instanceof LivingEntity _entity)
 								_entity.setHealth(
-										(float) ((entity instanceof LivingEntity _livingEntity38 && _livingEntity38.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity38.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+										(float) ((entity instanceof LivingEntity _livingEntity38 && _livingEntity38.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity38.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 4));
 						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 1 && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 525) {
 							if (entity instanceof LivingEntity _livingEntity41 && _livingEntity41.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 								_livingEntity41.getAttribute(Attributes.MAX_HEALTH)
 										.setBaseValue(((entity instanceof LivingEntity _livingEntity40 && _livingEntity40.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity40.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
-												* 5 * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+												* 4 * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 							if (entity instanceof LivingEntity _entity)
 								_entity.setHealth(
-										(float) ((entity instanceof LivingEntity _livingEntity42 && _livingEntity42.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity42.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5
+										(float) ((entity instanceof LivingEntity _livingEntity42 && _livingEntity42.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity42.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 4
 												* 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 525) {
 							if (entity instanceof LivingEntity _livingEntity45 && _livingEntity45.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
@@ -118,22 +118,49 @@ public class EntitySpawnsProcedure {
 										(float) ((entity instanceof LivingEntity _livingEntity46 && _livingEntity46.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity46.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
 												* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 						}
+					} else if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/engiegameshostile")))) {
+						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty <= 0) {
+							if (entity instanceof LivingEntity _livingEntity50 && _livingEntity50.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity50.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
+										((entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity49.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+							if (entity instanceof LivingEntity _entity)
+								_entity.setHealth(
+										(float) ((entity instanceof LivingEntity _livingEntity51 && _livingEntity51.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity51.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 1 && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 525) {
+							if (entity instanceof LivingEntity _livingEntity54 && _livingEntity54.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity54.getAttribute(Attributes.MAX_HEALTH)
+										.setBaseValue(((entity instanceof LivingEntity _livingEntity53 && _livingEntity53.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity53.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
+												* 5 * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+							if (entity instanceof LivingEntity _entity)
+								_entity.setHealth(
+										(float) ((entity instanceof LivingEntity _livingEntity55 && _livingEntity55.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity55.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5
+												* 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 525) {
+							if (entity instanceof LivingEntity _livingEntity58 && _livingEntity58.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity58.getAttribute(Attributes.MAX_HEALTH)
+										.setBaseValue(((entity instanceof LivingEntity _livingEntity57 && _livingEntity57.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity57.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
+												* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+							if (entity instanceof LivingEntity _entity)
+								_entity.setHealth(
+										(float) ((entity instanceof LivingEntity _livingEntity59 && _livingEntity59.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity59.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
+												* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+						}
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).mobbasehpmulttoggle == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 1 && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 525) {
-						if (entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-							_livingEntity49.getAttribute(Attributes.MAX_HEALTH)
-									.setBaseValue(((entity instanceof LivingEntity _livingEntity48 && _livingEntity48.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity48.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2.5
+						if (entity instanceof LivingEntity _livingEntity62 && _livingEntity62.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+							_livingEntity62.getAttribute(Attributes.MAX_HEALTH)
+									.setBaseValue(((entity instanceof LivingEntity _livingEntity61 && _livingEntity61.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity61.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2.5
 											* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 						if (entity instanceof LivingEntity _entity)
 							_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 					} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 525) {
-						if (entity instanceof LivingEntity _livingEntity53 && _livingEntity53.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-							_livingEntity53.getAttribute(Attributes.MAX_HEALTH)
-									.setBaseValue(((entity instanceof LivingEntity _livingEntity52 && _livingEntity52.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity52.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
+						if (entity instanceof LivingEntity _livingEntity66 && _livingEntity66.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+							_livingEntity66.getAttribute(Attributes.MAX_HEALTH)
+									.setBaseValue(((entity instanceof LivingEntity _livingEntity65 && _livingEntity65.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity65.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
 											* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 						if (entity instanceof LivingEntity _entity)
-							_entity.setHealth((float) ((entity instanceof LivingEntity _livingEntity54 && _livingEntity54.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity54.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
+							_entity.setHealth((float) ((entity instanceof LivingEntity _livingEntity67 && _livingEntity67.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity67.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0)
 									* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 					}
 				}
@@ -141,26 +168,33 @@ public class EntitySpawnsProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).mobbasehpmulttoggle == true) {
 					if (ModList.get().isLoaded("attributefix") == true) {
 						if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/nightmarehostile")))) {
-							if (entity instanceof LivingEntity _livingEntity59 && _livingEntity59.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-								_livingEntity59.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
-										((entity instanceof LivingEntity _livingEntity58 && _livingEntity58.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity58.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2));
+							if (entity instanceof LivingEntity _livingEntity72 && _livingEntity72.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity72.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
+										((entity instanceof LivingEntity _livingEntity71 && _livingEntity71.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity71.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2));
 							if (entity instanceof LivingEntity _entity)
 								_entity.setHealth(
-										(float) ((entity instanceof LivingEntity _livingEntity60 && _livingEntity60.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity60.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2));
+										(float) ((entity instanceof LivingEntity _livingEntity73 && _livingEntity73.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity73.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 2));
 						} else if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/insanityhostile")))) {
-							if (entity instanceof LivingEntity _livingEntity64 && _livingEntity64.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-								_livingEntity64.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
-										((entity instanceof LivingEntity _livingEntity63 && _livingEntity63.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity63.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 3));
+							if (entity instanceof LivingEntity _livingEntity77 && _livingEntity77.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity77.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
+										((entity instanceof LivingEntity _livingEntity76 && _livingEntity76.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity76.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 3));
 							if (entity instanceof LivingEntity _entity)
 								_entity.setHealth(
-										(float) ((entity instanceof LivingEntity _livingEntity65 && _livingEntity65.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity65.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 3));
+										(float) ((entity instanceof LivingEntity _livingEntity78 && _livingEntity78.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity78.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 3));
 						} else if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/engiepochostile")))) {
-							if (entity instanceof LivingEntity _livingEntity69 && _livingEntity69.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-								_livingEntity69.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
-										((entity instanceof LivingEntity _livingEntity68 && _livingEntity68.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity68.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+							if (entity instanceof LivingEntity _livingEntity82 && _livingEntity82.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity82.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
+										((entity instanceof LivingEntity _livingEntity81 && _livingEntity81.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity81.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 4));
 							if (entity instanceof LivingEntity _entity)
 								_entity.setHealth(
-										(float) ((entity instanceof LivingEntity _livingEntity70 && _livingEntity70.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity70.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+										(float) ((entity instanceof LivingEntity _livingEntity83 && _livingEntity83.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity83.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 4));
+						} else if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/engiegameshostile")))) {
+							if (entity instanceof LivingEntity _livingEntity87 && _livingEntity87.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+								_livingEntity87.getAttribute(Attributes.MAX_HEALTH).setBaseValue(
+										((entity instanceof LivingEntity _livingEntity86 && _livingEntity86.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity86.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
+							if (entity instanceof LivingEntity _entity)
+								_entity.setHealth(
+										(float) ((entity instanceof LivingEntity _livingEntity88 && _livingEntity88.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity88.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
 						}
 					}
 				}

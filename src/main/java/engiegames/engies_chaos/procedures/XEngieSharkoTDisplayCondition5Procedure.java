@@ -9,8 +9,9 @@ public class XEngieSharkoTDisplayCondition5Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof XEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(XEngieSharkoEntity.DATA_SharkoState) : 0) == 4
-				&& (entity instanceof XEngieSharkoEntity _datEntL2 && _datEntL2.getEntityData().get(XEngieSharkoEntity.DATA_AlternateState)) == false) {
+		if (!((entity.getDisplayName().getString()).equals("Pho") || (entity.getDisplayName().getString()).equals("Nyx")) && (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)
+				&& (entity instanceof XEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(XEngieSharkoEntity.DATA_SharkoState) : 0) == 4
+				&& (entity instanceof XEngieSharkoEntity _datEntL4 && _datEntL4.getEntityData().get(XEngieSharkoEntity.DATA_AlternateState)) == false) {
 			return true;
 		}
 		return false;

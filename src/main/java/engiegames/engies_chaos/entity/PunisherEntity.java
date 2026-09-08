@@ -32,7 +32,6 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.PunisherOnInitialEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.PunisherOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class PunisherEntity extends Monster {
@@ -116,12 +115,6 @@ public class PunisherEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		PunisherOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
-	}
-
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		PunisherOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

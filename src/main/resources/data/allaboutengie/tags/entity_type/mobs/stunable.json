@@ -8,6 +8,8 @@
     },
     "cave_spider",
     "skeleton",
+    "engies_chaos:enraged_tnt",
+    "engies_chaos:enraged_normal",
     "zombie_villager",
     {
       "id": "#engies_chaos:mobs/nightmarehostile",
@@ -16,6 +18,7 @@
     "vindicator",
     "creeper",
     "zombie",
+    "engies_chaos:enraged_speed",
     "zombified_piglin",
     "evoker",
     "pillager",

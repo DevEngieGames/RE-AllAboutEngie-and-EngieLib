@@ -29,83 +29,81 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 		double ry = 0;
 		double rz = 0;
 		boolean entity_found = false;
-		Entity player = null;
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			player = entityiterator;
 			if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(200 / 2d), e -> true).isEmpty()) {
-				entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((player.getX()), (player.getY() + 1.5), (player.getZ())));
-				if ((player.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == false) {
+				entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entityiterator.getX()), (entityiterator.getY() + 1.5), (entityiterator.getZ())));
+				if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == false) {
 					if (!(!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(100 / 2d), e -> true).isEmpty())) {
-						if ((player.getDirection()) == Direction.NORTH) {
+						if ((entityiterator.getDirection()) == Direction.NORTH) {
 							if (Mth.nextDouble(RandomSource.create(), 1, 4) <= 2) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)));
+									_ent.teleportTo((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							} else if (Mth.nextDouble(RandomSource.create(), 1, 4) >= 3) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)));
+									_ent.teleportTo((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 25, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							}
-						} else if ((player.getDirection()) == Direction.SOUTH) {
+						} else if ((entityiterator.getDirection()) == Direction.SOUTH) {
 							if (Mth.nextDouble(RandomSource.create(), 1, 4) <= 2) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)));
+									_ent.teleportTo((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							} else if (Mth.nextDouble(RandomSource.create(), 1, 4) >= 3) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)));
+									_ent.teleportTo((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 1, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 25, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							}
-						} else if ((player.getDirection()) == Direction.EAST) {
+						} else if ((entityiterator.getDirection()) == Direction.EAST) {
 							if (Mth.nextDouble(RandomSource.create(), 1, 4) <= 2) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)));
+									_ent.teleportTo((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							} else if (Mth.nextDouble(RandomSource.create(), 1, 4) >= 3) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)));
+									_ent.teleportTo((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() + Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							}
-						} else if ((player.getDirection()) == Direction.WEST) {
+						} else if ((entityiterator.getDirection()) == Direction.WEST) {
 							if (Mth.nextDouble(RandomSource.create(), 1, 4) <= 2) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)));
+									_ent.teleportTo((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() + Mth.nextDouble(RandomSource.create(), 1, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							} else if (Mth.nextDouble(RandomSource.create(), 1, 4) >= 3) {
 								{
 									Entity _ent = entity;
-									_ent.teleportTo((player.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)));
+									_ent.teleportTo((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)));
 									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((player.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (player.getY()), (player.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)), _ent.getYRot(),
-												_ent.getXRot());
+										_serverPlayer.connection.teleport((entityiterator.getX() - Mth.nextDouble(RandomSource.create(), 25, 45)), (entityiterator.getY()), (entityiterator.getZ() - Mth.nextDouble(RandomSource.create(), 1, 45)),
+												_ent.getYRot(), _ent.getXRot());
 								}
 							}
 						}
@@ -118,16 +116,23 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 						if (entity instanceof Mob _entity)
 							_entity.getNavigation().stop();
 					}
-				} else if ((player.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == true) {
+				} else if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == true) {
 					if (entity instanceof Mob _entity)
-						_entity.getNavigation().moveTo((player.getX()), (player.getY()), (player.getZ()), 1);
+						_entity.getNavigation().moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1);
 					if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(2 / 2d), e -> true).isEmpty()) {
 						{
-							Entity _ent = player;
+							Entity _ent = entityiterator;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s blindness 10 255 true");
 							}
+						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.BlindShadowSharkEngieAttack = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
 						}
 						if (!entity.level.isClientSide())
 							entity.discard();

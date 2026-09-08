@@ -41,8 +41,8 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
+import engiegames.engies_chaos.procedures.DoomsdayEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayRightClickedOnEntityProcedure;
-import engiegames.engies_chaos.procedures.DoomsDayNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -140,7 +140,7 @@ public class DoomsDayEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return DoomsDayNaturalEntitySpawningConditionProcedure.execute(world);
+			return DoomsdayEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

@@ -49,7 +49,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class InsanityEngieEntity extends Monster {
 	public InsanityEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(EngiesChaosModEntities.INSANITY_ENGIE.get(), world);
+		this(EngiesChaosModEntities.INSANITY_HOSTILE_ENGIE.get(), world);
 	}
 
 	public InsanityEngieEntity(EntityType<InsanityEngieEntity> type, Level world) {
@@ -213,7 +213,7 @@ public class InsanityEngieEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.INSANITY_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+		SpawnPlacements.register(EngiesChaosModEntities.INSANITY_HOSTILE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

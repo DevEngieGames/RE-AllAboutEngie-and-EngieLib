@@ -12,6 +12,8 @@ import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -72,7 +74,9 @@ public class MindscapeEngieEntity extends PathfinderMob {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(2, new FloatGoal(this));
+		this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, (float) 12));
+		this.goalSelector.addGoal(3, new FloatGoal(this));
+		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 	}
 
 	@Override
@@ -164,19 +168,6 @@ public class MindscapeEngieEntity extends PathfinderMob {
 	}
 
 	@Override
-	public boolean isPushable() {
-		return false;
-	}
-
-	@Override
-	protected void doPush(Entity entityIn) {
-	}
-
-	@Override
-	protected void pushEntities() {
-	}
-
-	@Override
 	public EntityDimensions getDimensions(Pose pose) {
 		Entity entity = this;
 		Level world = this.level;
@@ -191,7 +182,7 @@ public class MindscapeEngieEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return MindscapeEngieSpawningCondProcedure.execute();
+			return MindscapeEngieSpawningCondProcedure.execute(world);
 		});
 	}
 

@@ -93,7 +93,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 132, 12) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 132, 15) {
 			private final int slot = 0;
 			private int x = DeveloperModeGUIMenu.this.x;
 			private int y = DeveloperModeGUIMenu.this.y;
@@ -103,7 +103,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:roughtools")));
 			}
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 156, 12) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 156, 15) {
 			private final int slot = 1;
 			private int x = DeveloperModeGUIMenu.this.x;
 			private int y = DeveloperModeGUIMenu.this.y;
@@ -113,7 +113,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:goldtools")));
 			}
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 180, 12) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 180, 15) {
 			private final int slot = 2;
 			private int x = DeveloperModeGUIMenu.this.x;
 			private int y = DeveloperModeGUIMenu.this.y;
@@ -123,7 +123,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:engietools")));
 			}
 		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 210, 57) {
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 210, 59) {
 			private final int slot = 3;
 			private int x = DeveloperModeGUIMenu.this.x;
 			private int y = DeveloperModeGUIMenu.this.y;

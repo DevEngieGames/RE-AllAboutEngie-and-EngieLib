@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "[NIGHTMARE] Monstrosity Engie",
     "mobLabel": "",
-    "mobModelName": "Modelnightmaremon",
-    "mobModelTexture": "nightmaremon_new.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nightmaremonstrosityengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

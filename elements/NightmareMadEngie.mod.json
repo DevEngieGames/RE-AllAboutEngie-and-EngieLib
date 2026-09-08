@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "[NIGHTMARE] Mad Engie",
     "mobLabel": "",
-    "mobModelName": "Modelnightmarehostile",
-    "mobModelTexture": "nightmaremad_new.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nightmaremadengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

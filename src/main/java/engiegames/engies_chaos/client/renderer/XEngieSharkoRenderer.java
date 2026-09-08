@@ -19,6 +19,20 @@ import engiegames.engies_chaos.procedures.XEngieSharkoTDisplayCondition4Procedur
 import engiegames.engies_chaos.procedures.XEngieSharkoTDisplayCondition3Procedure;
 import engiegames.engies_chaos.procedures.XEngieSharkoTDisplayCondition2Procedure;
 import engiegames.engies_chaos.procedures.XEngieSharkoDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.PhoDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition7Procedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition6Procedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition5Procedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition4Procedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition3Procedure;
+import engiegames.engies_chaos.procedures.PhoDisplayCondition2Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition7Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition6Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition5Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition4Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition3Procedure;
+import engiegames.engies_chaos.procedures.NyxDisplayCondition2Procedure;
 import engiegames.engies_chaos.entity.XEngieSharkoEntity;
 import engiegames.engies_chaos.client.model.Modelboyoxengie;
 import engiegames.engies_chaos.client.model.Modelboyotamedxengie;
@@ -178,6 +192,272 @@ public class XEngieSharkoRenderer extends MobRenderer<XEngieSharkoEntity, Modelb
 				double y = entity.getY();
 				double z = entity.getZ();
 				if (XEngieSharkoTDisplayCondition7Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleepaltxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepaltxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pho.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyotamedxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyotamedxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pho.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition2Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyositxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyositxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pho.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition3Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pho.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition4Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayonsidexengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayonsidexengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/phosleep.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition5Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleepxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pho.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition6Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayaltxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayaltxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/phosleep.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PhoDisplayCondition7Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleepaltxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepaltxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshork.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyotamedxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyotamedxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshork.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition2Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyositxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyositxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshork.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition3Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshork.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition4Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayonsidexengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayonsidexengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshorksleep.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition5Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleepxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshork.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition6Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayaltxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayaltxengie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<XEngieSharkoEntity, Modelboyoxengie<XEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/nyx_aka_pinkshorksleep.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, XEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (NyxDisplayCondition7Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new Modelboyosleepaltxengie(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepaltxengie.LAYER_LOCATION));
 					this.getParentModel().copyPropertiesTo(model);

@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.NightmareHostileBiblicallyAccurateEngieEntity;
-import engiegames.engies_chaos.client.model.Modelnightmarehostile;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class NightmareHostileBiblicallyAccurateEngieRenderer extends MobRenderer<NightmareHostileBiblicallyAccurateEngieEntity, Modelnightmarehostile<NightmareHostileBiblicallyAccurateEngieEntity>> {
+public class NightmareHostileBiblicallyAccurateEngieRenderer extends MobRenderer<NightmareHostileBiblicallyAccurateEngieEntity, Modelhostile<NightmareHostileBiblicallyAccurateEngieEntity>> {
 	public NightmareHostileBiblicallyAccurateEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelnightmarehostile<NightmareHostileBiblicallyAccurateEngieEntity>(context.bakeLayer(Modelnightmarehostile.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelhostile<NightmareHostileBiblicallyAccurateEngieEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
@@ -28,6 +28,6 @@ public class NightmareHostileBiblicallyAccurateEngieRenderer extends MobRenderer
 
 	@Override
 	public ResourceLocation getTextureLocation(NightmareHostileBiblicallyAccurateEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/nightmarehostilebib_new.png");
+		return new ResourceLocation("engies_chaos:textures/entities/nightmarehostilebiblicallyaccurateengie.png");
 	}
 }

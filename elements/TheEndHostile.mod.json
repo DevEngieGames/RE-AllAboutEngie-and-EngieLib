@@ -155,7 +155,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningCondition": {
-      "name": "TheEndNaturalEntitySpawningCondition"
+      "name": "HostileTheEndEntitySpawningCondition"
     },
     "spawningProbability": 10,
     "mobSpawningType": "monster",

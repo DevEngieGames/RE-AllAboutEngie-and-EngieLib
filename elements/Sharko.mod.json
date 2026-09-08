@@ -314,7 +314,7 @@
     "spawningCondition": {
       "name": "AprilFoolsDespawning"
     },
-    "spawningProbability": 45,
+    "spawningProbability": 8,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 4,

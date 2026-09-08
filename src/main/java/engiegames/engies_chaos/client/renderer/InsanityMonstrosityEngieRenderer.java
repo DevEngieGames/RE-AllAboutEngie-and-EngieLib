@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.InsanityMonstrosityEngieEntity;
-import engiegames.engies_chaos.client.model.Modelinsanitymonstrosity;
+import engiegames.engies_chaos.client.model.Modelinsanityhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class InsanityMonstrosityEngieRenderer extends MobRenderer<InsanityMonstrosityEngieEntity, Modelinsanitymonstrosity<InsanityMonstrosityEngieEntity>> {
+public class InsanityMonstrosityEngieRenderer extends MobRenderer<InsanityMonstrosityEngieEntity, Modelinsanityhostile<InsanityMonstrosityEngieEntity>> {
 	public InsanityMonstrosityEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelinsanitymonstrosity<InsanityMonstrosityEngieEntity>(context.bakeLayer(Modelinsanitymonstrosity.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelinsanityhostile<InsanityMonstrosityEngieEntity>(context.bakeLayer(Modelinsanityhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
@@ -28,6 +28,6 @@ public class InsanityMonstrosityEngieRenderer extends MobRenderer<InsanityMonstr
 
 	@Override
 	public ResourceLocation getTextureLocation(InsanityMonstrosityEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/insanitymonstrosity.png");
+		return new ResourceLocation("engies_chaos:textures/entities/insanitymonstrosityengie.png");
 	}
 }

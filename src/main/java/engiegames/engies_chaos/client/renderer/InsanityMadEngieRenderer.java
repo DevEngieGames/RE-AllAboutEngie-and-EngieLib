@@ -28,6 +28,6 @@ public class InsanityMadEngieRenderer extends MobRenderer<InsanityMadEngieEntity
 
 	@Override
 	public ResourceLocation getTextureLocation(InsanityMadEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/insanitymad.png");
+		return new ResourceLocation("engies_chaos:textures/entities/insanitymadengie.png");
 	}
 }

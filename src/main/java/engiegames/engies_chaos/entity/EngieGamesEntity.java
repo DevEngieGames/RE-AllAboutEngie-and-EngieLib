@@ -42,7 +42,6 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesRightClickedOnEntityTradeProcedure;
-import engiegames.engies_chaos.procedures.EngieGamesOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesNaturalEntitySpawningProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -133,12 +132,6 @@ public class EngieGamesEntity extends PathfinderMob {
 
 		EngieGamesRightClickedOnEntityTradeProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
-	}
-
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		EngieGamesOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

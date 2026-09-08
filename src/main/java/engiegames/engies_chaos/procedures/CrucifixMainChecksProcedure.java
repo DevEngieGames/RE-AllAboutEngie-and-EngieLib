@@ -8,8 +8,6 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,7 +27,6 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
-import engiegames.engies_chaos.init.EngiesChaosModEnchantments;
 
 @Mod.EventBusSubscriber
 public class CrucifixMainChecksProcedure {
@@ -75,19 +72,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -123,19 +108,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -144,7 +117,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.DOOMS_DAY_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.DOOMS_DAY_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -171,19 +145,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -219,19 +181,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -240,7 +190,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.SUPER_DOOMS_DAY_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.SUPER_DOOMS_DAY_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -267,19 +218,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -315,19 +254,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -336,7 +263,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -363,19 +291,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -411,19 +327,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -432,7 +336,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -459,19 +364,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -507,19 +400,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -528,7 +409,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.MINDSCAPE_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.MINDSCAPE_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -555,19 +437,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -603,19 +473,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -624,7 +482,8 @@ public class CrucifixMainChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -651,19 +510,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -699,19 +546,7 @@ public class CrucifixMainChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {

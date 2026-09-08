@@ -138,7 +138,7 @@ public class ShadowSharkEngieEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return ShadowSharkSpawningCondProcedure.execute();
+			return ShadowSharkSpawningCondProcedure.execute(world);
 		});
 	}
 

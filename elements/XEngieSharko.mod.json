@@ -93,6 +93,132 @@
         "condition": {
           "name": "XEngieSharkoTDisplayCondition7"
         }
+      },
+      {
+        "model": "Modelboyotamedxengie",
+        "texture": "pho.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyositxengie",
+        "texture": "pho.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolayxengie",
+        "texture": "pho.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonsidexengie",
+        "texture": "pho.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleepxengie",
+        "texture": "phosleep.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayaltxengie",
+        "texture": "pho.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepaltxengie",
+        "texture": "phosleep.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "PhoDisplayCondition7"
+        }
+      },
+      {
+        "model": "Modelboyotamedxengie",
+        "texture": "nyx_aka_pinkshork.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyositxengie",
+        "texture": "nyx_aka_pinkshork.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolayxengie",
+        "texture": "nyx_aka_pinkshork.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonsidexengie",
+        "texture": "nyx_aka_pinkshork.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleepxengie",
+        "texture": "nyx_aka_pinkshorksleep.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayaltxengie",
+        "texture": "nyx_aka_pinkshork.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepaltxengie",
+        "texture": "nyx_aka_pinkshorksleep.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "NyxDisplayCondition7"
+        }
       }
     ],
     "animations": [],

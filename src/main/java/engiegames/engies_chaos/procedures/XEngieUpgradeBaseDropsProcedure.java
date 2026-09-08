@@ -19,6 +19,7 @@ public class XEngieUpgradeBaseDropsProcedure {
 			return;
 		EngiesChaosMod.queueServerWork(2, () -> {
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("countuntilbasedrop") >= 525) {
+				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 9)) == 1) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY() + 0.5), (entity.getZ()), new ItemStack(EngiesChaosModItems.HELMET_BASE.get()));

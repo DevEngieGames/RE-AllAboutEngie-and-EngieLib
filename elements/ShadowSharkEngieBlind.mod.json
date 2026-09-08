@@ -5,7 +5,7 @@
     "mobName": "Shadow Shark Engie (Blind)",
     "mobLabel": "",
     "mobModelName": "ModelShadowEngieSharkEntity",
-    "mobModelTexture": "shadowsharkengieblind.png",
+    "mobModelTexture": "blindshadowsharkengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -24,7 +24,7 @@
     "modelLayers": [
       {
         "model": "Default",
-        "texture": "shadowsharkengieblind.png",
+        "texture": "blindshadowsharkengie.png",
         "disableHurtOverlay": true,
         "glow": true
       }

@@ -3,8 +3,6 @@ package engiegames.engies_chaos.procedures;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 
-import java.util.Calendar;
-
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.entity.AngryCreatorEntity;
 
@@ -13,17 +11,8 @@ public class OutragedEngieTickProcedure {
 		if (entity == null)
 			return;
 		if (EngiesChaosModVariables.MapVariables.get(world).seasonautumn == true || EngiesChaosModVariables.MapVariables.get(world).seasonwinter == true) {
-			if (Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
-				if (entity instanceof AngryCreatorEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_coldseasoned, false);
-				if (entity instanceof AngryCreatorEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_holloweened, true);
-			} else if (!(Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25)) {
-				if (entity instanceof AngryCreatorEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_coldseasoned, true);
-				if (entity instanceof AngryCreatorEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_holloweened, false);
-			}
+			if (entity instanceof AngryCreatorEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_coldseasoned, true);
 		} else {
 			if (entity instanceof AngryCreatorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(AngryCreatorEntity.DATA_coldseasoned, false);

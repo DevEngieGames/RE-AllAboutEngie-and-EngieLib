@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "[EngiePoc] Monstrosity Engie",
     "mobLabel": "",
-    "mobModelName": "Modelengiepochostile",
+    "mobModelName": "Modelhostile",
     "mobModelTexture": "engiepocmonstrosityengie.png",
     "transparentModelCondition": {
       "fixedValue": false
@@ -149,7 +149,7 @@
     "spawningProbability": 5,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,
-    "maxNumberOfMobsPerGroup": 18,
+    "maxNumberOfMobsPerGroup": 16,
     "restrictionBiomes": [],
     "spawnInDungeons": false,
     "raidSpawnsCount": [

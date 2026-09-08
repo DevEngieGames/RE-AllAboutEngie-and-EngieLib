@@ -142,7 +142,7 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+		SpawnPlacements.register(EngiesChaosModEntities.BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

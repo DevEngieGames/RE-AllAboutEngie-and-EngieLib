@@ -7,13 +7,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.EngiePocAngryEngieEntity;
-import engiegames.engies_chaos.client.model.Modelengiepochostile;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class EngiePocAngryEngieRenderer extends MobRenderer<EngiePocAngryEngieEntity, Modelengiepochostile<EngiePocAngryEngieEntity>> {
+public class EngiePocAngryEngieRenderer extends MobRenderer<EngiePocAngryEngieEntity, Modelhostile<EngiePocAngryEngieEntity>> {
 	public EngiePocAngryEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelengiepochostile<EngiePocAngryEngieEntity>(context.bakeLayer(Modelengiepochostile.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelhostile<EngiePocAngryEngieEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override

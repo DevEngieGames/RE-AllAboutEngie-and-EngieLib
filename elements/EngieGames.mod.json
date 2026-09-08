@@ -123,9 +123,6 @@
     "onRightClickedOn": {
       "name": "EngieGamesRightClickedOnEntityTrade"
     },
-    "onMobTickUpdate": {
-      "name": "EngieGamesOnEntityTickUpdate"
-    },
     "onInitialSpawn": {
       "name": "TraderOnEntitySpawn"
     },

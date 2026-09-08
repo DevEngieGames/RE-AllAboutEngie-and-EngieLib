@@ -2,9 +2,9 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "EngiePoc Engie",
+    "mobName": "[EngiePoc] Hostile Engie",
     "mobLabel": "",
-    "mobModelName": "Modelengiepochostile",
+    "mobModelName": "Modelhostile",
     "mobModelTexture": "engiepochostileengie.png",
     "transparentModelCondition": {
       "fixedValue": false
@@ -72,7 +72,7 @@
     "movementSpeed": 0.25,
     "stepHeight": 1.0,
     "armorBaseValue": 45.0,
-    "trackingRange": 192,
+    "trackingRange": 256,
     "followRange": 64,
     "health": 900,
     "xpAmount": 65,
@@ -148,8 +148,8 @@
     },
     "spawningProbability": 1,
     "mobSpawningType": "monster",
-    "minNumberOfMobsPerGroup": 1,
-    "maxNumberOfMobsPerGroup": 5,
+    "minNumberOfMobsPerGroup": 4,
+    "maxNumberOfMobsPerGroup": 16,
     "restrictionBiomes": [],
     "spawnInDungeons": false,
     "raidSpawnsCount": [

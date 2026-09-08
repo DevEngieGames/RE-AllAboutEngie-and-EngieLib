@@ -14,7 +14,8 @@ public class NightmareHostileEngieySpawningConditionProcedure {
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == false) {
 				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.NIGHTMARE_DIFFICULTY) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_TWO) == true
 						|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true
-						|| EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+						|| EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true
+						|| EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true) {
 					if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 						if (world.getMaxLocalRawBrightness(new BlockPos(x, y, z)) <= 7) {
 							return true;
@@ -28,7 +29,8 @@ public class NightmareHostileEngieySpawningConditionProcedure {
 					}
 				} else if (!(world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.NIGHTMARE_DIFFICULTY) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_TWO) == true
 						|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true
-						|| EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true)) {
+						|| EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true
+						|| EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true)) {
 					return false;
 				}
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == true) {

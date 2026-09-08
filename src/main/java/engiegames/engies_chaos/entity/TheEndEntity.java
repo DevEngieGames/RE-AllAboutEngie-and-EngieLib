@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.TheEndRightClickedOnEntityProcedure;
-import engiegames.engies_chaos.procedures.TheEndNaturalEntitySpawningConditionProcedure;
+import engiegames.engies_chaos.procedures.TheEndEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -140,7 +140,7 @@ public class TheEndEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return TheEndNaturalEntitySpawningConditionProcedure.execute(world);
+			return TheEndEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

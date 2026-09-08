@@ -4,7 +4,7 @@ license="Apache License version 2.0"
 
 [[mods]]
 modId="engies_chaos"
-version="24.57.58"
+version="25.56.58"
 displayName="Engie's Chaos"
 updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/EngiesChaos-and-EngieLib/refs/heads/Update-Check/EngiesChaos.json"
 displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"

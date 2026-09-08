@@ -47,7 +47,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EngiePocEngieEntity extends Monster {
 	public EngiePocEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), world);
+		this(EngiesChaosModEntities.ENGIE_POC_HOSTILE_ENGIE.get(), world);
 	}
 
 	public EngiePocEngieEntity(EntityType<EngiePocEngieEntity> type, Level world) {
@@ -206,7 +206,7 @@ public class EngiePocEngieEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+		SpawnPlacements.register(EngiesChaosModEntities.ENGIE_POC_HOSTILE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

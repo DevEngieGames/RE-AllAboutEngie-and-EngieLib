@@ -2,8 +2,9 @@
   "replace": false,
   "values": [
     "engies_chaos:hostile_engie",
-    "engies_chaos:engie_poc_engie",
-    "engies_chaos:nightmare_engie",
-    "engies_chaos:insanity_engie"
+    "engies_chaos:engie_poc_hostile_engie",
+    "engies_chaos:nightmare_hostile_engie",
+    "engies_chaos:insanity_hostile_engie",
+    "engies_chaos:engie_games_hostile_engie"
   ]
 }

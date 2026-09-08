@@ -7,6 +7,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
@@ -83,8 +85,10 @@ public class MythicSharkoRightClickedOnEntityProcedure {
 				if ((entity instanceof MythicSharkoEntity _datEntI ? _datEntI.getEntityData().get(MythicSharkoEntity.DATA_SharkoState) : 0) == 0) {
 					if (entity instanceof MythicSharkoEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(MythicSharkoEntity.DATA_SharkoState, 1);
+					entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.round(Mth.nextDouble(RandomSource.create(), 30, 60)));
 				} else if ((entity instanceof MythicSharkoEntity _datEntI ? _datEntI.getEntityData().get(MythicSharkoEntity.DATA_SharkoState) : 0) >= 1
 						&& (entity instanceof MythicSharkoEntity _datEntI ? _datEntI.getEntityData().get(MythicSharkoEntity.DATA_SharkoState) : 0) <= 3) {
+					entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.round(Mth.nextDouble(RandomSource.create(), 30, 60)));
 					if (entity instanceof MythicSharkoEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(MythicSharkoEntity.DATA_SharkoState, 0);
 				}

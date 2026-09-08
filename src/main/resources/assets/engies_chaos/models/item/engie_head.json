@@ -2,7 +2,8 @@
   "parent": "engies_chaos:custom/engiehead",
   "textures": {
     "0": "engies_chaos:block/engiehead",
-    "1": "engies_chaos:block/16101613_2",
+    "1": "engies_chaos:block/engieheadoutline",
+    "2": "engies_chaos:block/16101613_2",
     "particle": "engies_chaos:item/engieheadeatparticle"
   }
 }

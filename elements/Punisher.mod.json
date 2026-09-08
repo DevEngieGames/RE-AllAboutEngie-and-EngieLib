@@ -116,9 +116,6 @@
       "value": ""
     },
     "entityDataEntries": [],
-    "onMobTickUpdate": {
-      "name": "PunisherOnEntityTickUpdate"
-    },
     "onInitialSpawn": {
       "name": "PunisherOnInitialEntitySpawn"
     },

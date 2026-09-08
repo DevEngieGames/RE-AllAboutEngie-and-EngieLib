@@ -8,8 +8,6 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,7 +27,6 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
-import engiegames.engies_chaos.init.EngiesChaosModEnchantments;
 
 @Mod.EventBusSubscriber
 public class CrucifixAntimatterChecksProcedure {
@@ -52,13 +49,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 3600, 18, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 18, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 18, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 18, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -75,19 +72,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -100,13 +85,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 3600, 20, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 20, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 20, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 18, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 20, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 18, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -123,19 +108,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -144,17 +117,18 @@ public class CrucifixAntimatterChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_DOOMS_DAY_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_DOOMS_DAY_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 20, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -171,19 +145,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -196,13 +158,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 20, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 22, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 20, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -219,19 +181,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -240,17 +190,18 @@ public class CrucifixAntimatterChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_SUPER_DOOMS_DAY_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_SUPER_DOOMS_DAY_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 22, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -267,19 +218,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -292,13 +231,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 22, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 24, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 22, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -315,19 +254,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -336,17 +263,18 @@ public class CrucifixAntimatterChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_THE_END_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_THE_END_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 24, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -363,19 +291,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -388,13 +304,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 24, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 26, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 24, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -411,19 +327,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -432,17 +336,18 @@ public class CrucifixAntimatterChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 26, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -459,19 +364,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -484,13 +377,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 26, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 28, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 26, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -507,19 +400,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -528,17 +409,18 @@ public class CrucifixAntimatterChecksProcedure {
 						}
 					}
 				}
-			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_CRUCIFIX.get()) {
+			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_CRUCIFIX.get()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 28, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -555,19 +437,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixMainHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -580,13 +450,13 @@ public class CrucifixAntimatterChecksProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 400, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1800, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3200, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1600, 28, true, true));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3200, 30, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 28, true, true));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("The crucifix saved you from dying..."), true);
 				if (world instanceof Level _level) {
@@ -603,19 +473,7 @@ public class CrucifixAntimatterChecksProcedure {
 				} else if (event != null && event.hasResult()) {
 					event.setResult(Event.Result.DENY);
 				}
-				if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(), (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0
-						|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.UNBREAKING, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)) != 0) {
-					if (Mth.nextDouble(RandomSource.create(), 1, 100) > (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CrucifixOffHandDurabilityPercentage) {
-						{
-							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, RandomSource.create(), null)) {
-								_ist.shrink(1);
-								_ist.setDamageValue(0);
-							}
-						}
-					}
-				} else {
+				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("durabilitydamagepercentage")) {
 					{
 						ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY);
 						if (_ist.hurt(1, RandomSource.create(), null)) {

@@ -101,8 +101,15 @@ import engiegames.engies_chaos.entity.EngiePocHostileBiblicallyAccurateEngieEnti
 import engiegames.engies_chaos.entity.EngiePocEnragedEngieEntity;
 import engiegames.engies_chaos.entity.EngiePocEngieEntity;
 import engiegames.engies_chaos.entity.EngiePocAngryEngieEntity;
+import engiegames.engies_chaos.entity.EngieGamesOutragedEngieEntity;
+import engiegames.engies_chaos.entity.EngieGamesMonstrosityEngieEntity;
+import engiegames.engies_chaos.entity.EngieGamesMadEngieEntity;
+import engiegames.engies_chaos.entity.EngieGamesHostileEngieEntity;
+import engiegames.engies_chaos.entity.EngieGamesHostileBiblicallyAccurateEngieEntity;
 import engiegames.engies_chaos.entity.EngieGamesEntity;
+import engiegames.engies_chaos.entity.EngieGamesEnragedEngieEntity;
 import engiegames.engies_chaos.entity.EngieGamesDetectiveEntity;
+import engiegames.engies_chaos.entity.EngieGamesAngryEngieEntity;
 import engiegames.engies_chaos.entity.EngiEntity;
 import engiegames.engies_chaos.entity.DoomsDayHostileEntity;
 import engiegames.engies_chaos.entity.DoomsDayEntity;
@@ -212,7 +219,7 @@ public class EngiesChaosModEntities {
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<BiblicallyAccurateEngieEntity>> BIBLICALLY_ACCURATE_ENGIE = register("biblically_accurate_engie",
-			EntityType.Builder.<BiblicallyAccurateEngieEntity>of(BiblicallyAccurateEngieEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+			EntityType.Builder.<BiblicallyAccurateEngieEntity>of(BiblicallyAccurateEngieEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(BiblicallyAccurateEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
@@ -414,12 +421,12 @@ public class EngiesChaosModEntities {
 					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<InsanityMonstrosityEngieEntity>> INSANITY_MONSTROSITY_ENGIE = register("insanity_monstrosity_engie",
 			EntityType.Builder.<InsanityMonstrosityEngieEntity>of(InsanityMonstrosityEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(192).setUpdateInterval(3)
-					.setCustomClientFactory(InsanityMonstrosityEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<NightmareEngieEntity>> NIGHTMARE_ENGIE = register("nightmare_engie",
+					.setCustomClientFactory(InsanityMonstrosityEngieEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<NightmareEngieEntity>> NIGHTMARE_HOSTILE_ENGIE = register("nightmare_hostile_engie",
 			EntityType.Builder.<NightmareEngieEntity>of(NightmareEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(NightmareEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<InsanityEngieEntity>> INSANITY_ENGIE = register("insanity_engie",
+	public static final RegistryObject<EntityType<InsanityEngieEntity>> INSANITY_HOSTILE_ENGIE = register("insanity_hostile_engie",
 			EntityType.Builder.<InsanityEngieEntity>of(InsanityEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(192).setUpdateInterval(3).setCustomClientFactory(InsanityEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
@@ -586,12 +593,44 @@ public class EngiesChaosModEntities {
 					.setCustomClientFactory(EngiePocHostileBiblicallyAccurateEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<EngiePocEngieEntity>> ENGIE_POC_ENGIE = register("engie_poc_engie",
-			EntityType.Builder.<EngiePocEngieEntity>of(EngiePocEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(192).setUpdateInterval(3).setCustomClientFactory(EngiePocEngieEntity::new)
+	public static final RegistryObject<EntityType<EngiePocEngieEntity>> ENGIE_POC_HOSTILE_ENGIE = register("engie_poc_hostile_engie",
+			EntityType.Builder.<EngiePocEngieEntity>of(EngiePocEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(256).setUpdateInterval(3).setCustomClientFactory(EngiePocEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<HordeSpawnerEntity>> HORDE_SPAWNER = register("horde_spawner", EntityType.Builder.<HordeSpawnerEntity>of(HordeSpawnerEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HordeSpawnerEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<EngieGamesMadEngieEntity>> ENGIE_GAMES_MAD_ENGIE = register("engie_games_mad_engie",
+			EntityType.Builder.<EngieGamesMadEngieEntity>of(EngieGamesMadEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3).setCustomClientFactory(EngieGamesMadEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesAngryEngieEntity>> ENGIE_GAMES_ANGRY_ENGIE = register("engie_games_angry_engie",
+			EntityType.Builder.<EngieGamesAngryEngieEntity>of(EngieGamesAngryEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesAngryEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesEnragedEngieEntity>> ENGIE_GAMES_ENRAGED_ENGIE = register("engie_games_enraged_engie",
+			EntityType.Builder.<EngieGamesEnragedEngieEntity>of(EngieGamesEnragedEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesEnragedEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesOutragedEngieEntity>> ENGIE_GAMES_OUTRAGED_ENGIE = register("engie_games_outraged_engie",
+			EntityType.Builder.<EngieGamesOutragedEngieEntity>of(EngieGamesOutragedEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesOutragedEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesHostileBiblicallyAccurateEngieEntity>> ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE = register("engie_games_hostile_biblically_accurate_engie",
+			EntityType.Builder.<EngieGamesHostileBiblicallyAccurateEngieEntity>of(EngieGamesHostileBiblicallyAccurateEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesHostileBiblicallyAccurateEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesMonstrosityEngieEntity>> ENGIE_GAMES_MONSTROSITY_ENGIE = register("engie_games_monstrosity_engie",
+			EntityType.Builder.<EngieGamesMonstrosityEngieEntity>of(EngieGamesMonstrosityEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesMonstrosityEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<EngieGamesHostileEngieEntity>> ENGIE_GAMES_HOSTILE_ENGIE = register("engie_games_hostile_engie",
+			EntityType.Builder.<EngieGamesHostileEngieEntity>of(EngieGamesHostileEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(320).setUpdateInterval(3)
+					.setCustomClientFactory(EngieGamesHostileEngieEntity::new)
+
+					.sized(0.6f, 1.9f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -721,6 +760,13 @@ public class EngiesChaosModEntities {
 			EngiePocHostileBiblicallyAccurateEngieEntity.init();
 			EngiePocEngieEntity.init();
 			HordeSpawnerEntity.init();
+			EngieGamesMadEngieEntity.init();
+			EngieGamesAngryEngieEntity.init();
+			EngieGamesEnragedEngieEntity.init();
+			EngieGamesOutragedEngieEntity.init();
+			EngieGamesHostileBiblicallyAccurateEngieEntity.init();
+			EngieGamesMonstrosityEngieEntity.init();
+			EngieGamesHostileEngieEntity.init();
 		});
 	}
 
@@ -800,8 +846,8 @@ public class EngiesChaosModEntities {
 		event.put(INSANITY_ENRAGED_ENGIE.get(), InsanityEnragedEngieEntity.createAttributes().build());
 		event.put(INSANITY_OUTRAGED_ENGIE.get(), InsanityOutragedEngieEntity.createAttributes().build());
 		event.put(INSANITY_MONSTROSITY_ENGIE.get(), InsanityMonstrosityEngieEntity.createAttributes().build());
-		event.put(NIGHTMARE_ENGIE.get(), NightmareEngieEntity.createAttributes().build());
-		event.put(INSANITY_ENGIE.get(), InsanityEngieEntity.createAttributes().build());
+		event.put(NIGHTMARE_HOSTILE_ENGIE.get(), NightmareEngieEntity.createAttributes().build());
+		event.put(INSANITY_HOSTILE_ENGIE.get(), InsanityEngieEntity.createAttributes().build());
 		event.put(INSANITY_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), InsanityHostileBiblicallyAccurateEngieEntity.createAttributes().build());
 		event.put(HOSTILE_ENGIE.get(), HsotileEngieEntity.createAttributes().build());
 		event.put(RARE_SHARKO.get(), RareSharkoEntity.createAttributes().build());
@@ -843,7 +889,14 @@ public class EngiesChaosModEntities {
 		event.put(ENGIE_POC_OUTRAGED_ENGIE.get(), EngiePocOutragedEngieEntity.createAttributes().build());
 		event.put(ENGIE_POC_MONSTROSITY_ENGIE.get(), EngiePocMonstrosityEngieEntity.createAttributes().build());
 		event.put(ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngiePocHostileBiblicallyAccurateEngieEntity.createAttributes().build());
-		event.put(ENGIE_POC_ENGIE.get(), EngiePocEngieEntity.createAttributes().build());
+		event.put(ENGIE_POC_HOSTILE_ENGIE.get(), EngiePocEngieEntity.createAttributes().build());
 		event.put(HORDE_SPAWNER.get(), HordeSpawnerEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_MAD_ENGIE.get(), EngieGamesMadEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_ANGRY_ENGIE.get(), EngieGamesAngryEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_ENRAGED_ENGIE.get(), EngieGamesEnragedEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_OUTRAGED_ENGIE.get(), EngieGamesOutragedEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieEntity.createAttributes().build());
+		event.put(ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieEntity.createAttributes().build());
 	}
 }

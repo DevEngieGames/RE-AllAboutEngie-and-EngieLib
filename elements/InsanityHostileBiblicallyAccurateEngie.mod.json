@@ -5,7 +5,7 @@
     "mobName": "[INSANITY] (Hostile) Biblically Accurate Engie",
     "mobLabel": "",
     "mobModelName": "Modelinsanityhostile",
-    "mobModelTexture": "insanitybiblicallyhostile.png",
+    "mobModelTexture": "insanityhostilebiblicallyaccurateengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

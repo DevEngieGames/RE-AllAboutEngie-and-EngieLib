@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Nightmare Engie",
+    "mobName": "[NIGHTMARE] Hostile Engie",
     "mobLabel": "",
-    "mobModelName": "Modelnightmarehostile",
-    "mobModelTexture": "nightmareengie_new.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nightmarehostileengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -148,8 +148,8 @@
     },
     "spawningProbability": 1,
     "mobSpawningType": "monster",
-    "minNumberOfMobsPerGroup": 1,
-    "maxNumberOfMobsPerGroup": 5,
+    "minNumberOfMobsPerGroup": 2,
+    "maxNumberOfMobsPerGroup": 8,
     "restrictionBiomes": [],
     "spawnInDungeons": false,
     "raidSpawnsCount": [

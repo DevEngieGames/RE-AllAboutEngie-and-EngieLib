@@ -17,6 +17,8 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
+
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.EngiesChaosMod;
 
@@ -25,46 +27,60 @@ public class DoomsdayCleanupProcedure {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level, event.player);
+			execute(event, event.player.level);
 		}
 	}
 
-	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
+	public static void execute(LevelAccessor world) {
+		execute(null, world);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
-		if (entity == null)
-			return;
+	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup == true) {
-			EngiesChaosMod.queueServerWork(5, () -> {
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				EngiesChaosMod.queueServerWork(5, () -> {
+					{
+						Entity _ent = entityiterator;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "execute as @a run EChaos EngieLib DoomsdayCleanupPlayer");
+						}
+					}
+					{
+						boolean _setval = false;
+						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.crucifixbypass = _setval;
+							capability.syncPlayerVariables(entityiterator);
+						});
+					}
+					{
+						boolean _setval = false;
+						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.healthreductiondday = _setval;
+							capability.syncPlayerVariables(entityiterator);
+						});
+					}
+				});
 				{
-					Entity _ent = entity;
+					Entity _ent = entityiterator;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "execute as @a run EChaos EngieLib DoomsdayCleanupPlayer");
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
 					}
 				}
 				{
-					boolean _setval = false;
-					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.crucifixbypass = _setval;
-						capability.syncPlayerVariables(entity);
+					Entity _ent = entityiterator;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=item]");
+					}
+				}
+				{
+					double _setval = 0;
+					entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.lightningflashnum = _setval;
+						capability.syncPlayerVariables(entityiterator);
 					});
-				}
-			});
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=item]");
 				}
 			}
 			EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = 0;
@@ -117,13 +133,6 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			{
-				double _setval = 0;
-				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.lightningflashnum = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
@@ -195,13 +204,6 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).engieswrathstart = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			{
-				boolean _setval = false;
-				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.healthreductiondday = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
 			EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 = true;

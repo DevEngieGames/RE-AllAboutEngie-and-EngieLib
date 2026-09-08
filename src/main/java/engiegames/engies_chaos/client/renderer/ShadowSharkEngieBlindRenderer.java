@@ -18,7 +18,7 @@ public class ShadowSharkEngieBlindRenderer extends MobRenderer<ShadowSharkEngieB
 	public ShadowSharkEngieBlindRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelShadowEngieSharkEntity<ShadowSharkEngieBlindEntity>(context.bakeLayer(ModelShadowEngieSharkEntity.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<ShadowSharkEngieBlindEntity, ModelShadowEngieSharkEntity<ShadowSharkEngieBlindEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/shadowsharkengieblind.png");
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/blindshadowsharkengie.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ShadowSharkEngieBlindEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -35,6 +35,6 @@ public class ShadowSharkEngieBlindRenderer extends MobRenderer<ShadowSharkEngieB
 
 	@Override
 	public ResourceLocation getTextureLocation(ShadowSharkEngieBlindEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/shadowsharkengieblind.png");
+		return new ResourceLocation("engies_chaos:textures/entities/blindshadowsharkengie.png");
 	}
 }

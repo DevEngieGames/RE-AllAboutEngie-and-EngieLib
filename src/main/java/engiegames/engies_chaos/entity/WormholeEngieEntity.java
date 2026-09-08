@@ -161,7 +161,7 @@ public class WormholeEngieEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return WormholeSpawningCondProcedure.execute();
+			return WormholeSpawningCondProcedure.execute(world);
 		});
 	}
 

@@ -7,6 +7,6 @@
     "type": "engies_chaos:engie_poc_monstrosity_engie",
     "weight": 5,
     "minCount": 4,
-    "maxCount": 18
+    "maxCount": 16
   }
 }

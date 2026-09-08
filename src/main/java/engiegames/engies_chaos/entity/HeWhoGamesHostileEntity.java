@@ -103,7 +103,7 @@ public class HeWhoGamesHostileEntity extends PathfinderMob {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		HeWhoGamesHostileEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		HeWhoGamesHostileEntityDiesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override

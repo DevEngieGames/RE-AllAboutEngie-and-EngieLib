@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "[EngiePoc] Outraged Engie",
     "mobLabel": "",
-    "mobModelName": "Modelengiepochostile",
+    "mobModelName": "Modelhostile",
     "mobModelTexture": "engiepocoutragedengie.png",
     "transparentModelCondition": {
       "fixedValue": false

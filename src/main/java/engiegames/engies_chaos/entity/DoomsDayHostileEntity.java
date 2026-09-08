@@ -37,8 +37,8 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
+import engiegames.engies_chaos.procedures.HostileDoomsdayEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
-import engiegames.engies_chaos.procedures.DoomsDayNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayHostileEntityDiesProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -196,7 +196,7 @@ public class DoomsDayHostileEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return DoomsDayNaturalEntitySpawningConditionProcedure.execute(world);
+			return HostileDoomsdayEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

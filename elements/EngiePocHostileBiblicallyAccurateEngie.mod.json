@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "[EngiePoc] (Hostile) Biblically Accurate Engie",
     "mobLabel": "",
-    "mobModelName": "Modelengiepochostile",
+    "mobModelName": "Modelhostile",
     "mobModelTexture": "engiepochostilebiblicallyaccurateengie.png",
     "transparentModelCondition": {
       "fixedValue": false

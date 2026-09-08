@@ -28,6 +28,6 @@ public class InsanityHostileBiblicallyAccurateEngieRenderer extends MobRenderer<
 
 	@Override
 	public ResourceLocation getTextureLocation(InsanityHostileBiblicallyAccurateEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/insanitybiblicallyhostile.png");
+		return new ResourceLocation("engies_chaos:textures/entities/insanityhostilebiblicallyaccurateengie.png");
 	}
 }

@@ -9,15 +9,15 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import engiegames.engies_chaos.entity.PureInsanityEntity;
-import engiegames.engies_chaos.client.model.ModelEngieGames;
+import engiegames.engies_chaos.client.model.Modelinsanity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class PureInsanityRenderer extends MobRenderer<PureInsanityEntity, ModelEngieGames<PureInsanityEntity>> {
+public class PureInsanityRenderer extends MobRenderer<PureInsanityEntity, Modelinsanity<PureInsanityEntity>> {
 	public PureInsanityRenderer(EntityRendererProvider.Context context) {
-		super(context, new ModelEngieGames<PureInsanityEntity>(context.bakeLayer(ModelEngieGames.LAYER_LOCATION)), 0.5f);
-		this.addLayer(new RenderLayer<PureInsanityEntity, ModelEngieGames<PureInsanityEntity>>(this) {
+		super(context, new Modelinsanity<PureInsanityEntity>(context.bakeLayer(Modelinsanity.LAYER_LOCATION)), 0.5f);
+		this.addLayer(new RenderLayer<PureInsanityEntity, Modelinsanity<PureInsanityEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/pureinsanity.png");
 
 			@Override

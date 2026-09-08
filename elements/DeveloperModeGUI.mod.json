@@ -22,7 +22,7 @@
             "falpha": 0.0
           },
           "x": 95,
-          "y": 3,
+          "y": 4,
           "locked": false
         }
       },
@@ -53,7 +53,7 @@
           "width": 24,
           "height": 24,
           "x": 219,
-          "y": 8,
+          "y": 11,
           "locked": false
         }
       },
@@ -76,7 +76,7 @@
           },
           "dropItemsWhenNotBound": true,
           "x": 222,
-          "y": 11,
+          "y": 14,
           "locked": false
         }
       },
@@ -90,7 +90,7 @@
           "width": 24,
           "height": 24,
           "x": 243,
-          "y": 8,
+          "y": 11,
           "locked": false
         }
       },
@@ -113,7 +113,7 @@
           },
           "dropItemsWhenNotBound": true,
           "x": 246,
-          "y": 11,
+          "y": 14,
           "locked": false
         }
       },
@@ -127,7 +127,7 @@
           "width": 24,
           "height": 24,
           "x": 267,
-          "y": 8,
+          "y": 11,
           "locked": false
         }
       },
@@ -150,7 +150,7 @@
           },
           "dropItemsWhenNotBound": true,
           "x": 270,
-          "y": 11,
+          "y": 14,
           "locked": false
         }
       },
@@ -164,7 +164,7 @@
           "width": 24,
           "height": 24,
           "x": 297,
-          "y": 53,
+          "y": 55,
           "locked": false
         }
       },
@@ -183,7 +183,7 @@
           },
           "dropItemsWhenNotBound": true,
           "x": 300,
-          "y": 56,
+          "y": 58,
           "locked": false
         }
       },
@@ -265,7 +265,7 @@
           "width": 77,
           "height": 20,
           "x": 97,
-          "y": 55,
+          "y": 56,
           "locked": false
         }
       },
@@ -297,7 +297,7 @@
           "width": 103,
           "height": 20,
           "x": 188,
-          "y": 55,
+          "y": 56,
           "locked": false
         }
       },
@@ -383,7 +383,7 @@
           "width": 192,
           "height": 20,
           "x": 99,
-          "y": 32,
+          "y": 35,
           "locked": false
         }
       },
@@ -395,7 +395,7 @@
           "width": 120,
           "height": 20,
           "x": 99,
-          "y": 10,
+          "y": 13,
           "locked": false
         }
       },

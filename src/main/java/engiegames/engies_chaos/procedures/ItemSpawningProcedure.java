@@ -1396,164 +1396,10 @@ public class ItemSpawningProcedure {
 					}
 				});
 			}
-			if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).CountUntilBaseDrop > 525
-					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("countuntilbasedrop") > 525) {
-				if (Math.random() < 0.1) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HELMET_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.1 && Math.random() < 0.2) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.CHESTPLATE_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.2 && Math.random() < 0.3) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.LEGGINGS_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.3 && Math.random() < 0.4) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BOOTS_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.4 && Math.random() < 0.5) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.PICKAXE_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.5 && Math.random() < 0.6) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.AXE_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.6 && Math.random() < 0.7) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SHOVEL_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.7 && Math.random() < 0.8) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOE_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.8 && Math.random() < 0.9) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.AIOT_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				} else if (Math.random() >= 0.9) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.CRUCIFIX_BASE.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-					{
-						double _setval = 0;
-						sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.CountUntilBaseDrop = _setval;
-							capability.syncPlayerVariables(sourceentity);
-						});
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
-				}
-			}
 			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
-						100)) <= (sourceentity instanceof LivingEntity _livingEntity766 && _livingEntity766.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-								? _livingEntity766.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity704 && _livingEntity704.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity704.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 								: 0)) {
 					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
 						if (world instanceof ServerLevel _level) {
@@ -1572,11 +1418,11 @@ public class ItemSpawningProcedure {
 					}
 				}
 			}
-			if (entity instanceof ServerPlayer _plr776 && _plr776.level instanceof ServerLevel
-					&& _plr776.getAdvancements().getOrStartProgress(_plr776.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr714 && _plr714.level instanceof ServerLevel
+					&& _plr714.getAdvancements().getOrStartProgress(_plr714.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
-						100)) <= (sourceentity instanceof LivingEntity _livingEntity778 && _livingEntity778.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-								? _livingEntity778.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity716 && _livingEntity716.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity716.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 								: 0)) {
 					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
 						if (world instanceof ServerLevel _level) {

@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "[NIGHTMARE] (Hostile) Biblically Accurate Engie",
     "mobLabel": "",
-    "mobModelName": "Modelnightmarehostile",
-    "mobModelTexture": "nightmarehostilebib_new.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nightmarehostilebiblicallyaccurateengie.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

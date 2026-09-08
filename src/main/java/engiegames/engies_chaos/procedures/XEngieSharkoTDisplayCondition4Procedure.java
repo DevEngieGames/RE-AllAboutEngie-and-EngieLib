@@ -9,7 +9,8 @@ public class XEngieSharkoTDisplayCondition4Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof XEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(XEngieSharkoEntity.DATA_SharkoState) : 0) == 3) {
+		if (!((entity.getDisplayName().getString()).equals("Pho") || (entity.getDisplayName().getString()).equals("Nyx")) && (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)
+				&& (entity instanceof XEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(XEngieSharkoEntity.DATA_SharkoState) : 0) == 3) {
 			return true;
 		}
 		return false;

@@ -6,12 +6,15 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Button;
 
 import engiegames.engies_chaos.world.inventory.ConfigMenu;
 import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOnCheckProcedure;
 import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOffCheckProcedure;
 import engiegames.engies_chaos.procedures.HealthOverlayButtonDisplayProcedure;
+import engiegames.engies_chaos.procedures.EngiesTrueWrathToggleOnProcedure;
+import engiegames.engies_chaos.procedures.EngiesTrueWrathToggleOffProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheckProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheck3Procedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheck2Procedure;
@@ -54,6 +57,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	Button button_0;
 	Button button_off1;
 	Button button_off;
+	ImageButton imagebutton_denymark;
+	ImageButton imagebutton_checkmark;
 
 	public ConfigScreen(ConfigMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -103,19 +108,17 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_reall_about_engie_configuration"), 4, 4, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty_overlay"), 4, 16, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_doomsday"), 4, 47, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty_overlay"), 4, 17, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_doomsday"), 4, 48, -16777216);
 		if (ConfigCheckForOPProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty"), 4, 78, -16777216);
+			this.font.draw(ms, ConfigShowDiffProcedure.execute(world), 4, 79, -16777216);
 		if (AttributeFixCheckProcedure.execute())
 			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_you_do_not_have_attributefix_ins"), 4, 88, -16777216);
 		if (AttributeFixCheckProcedure.execute())
 			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_this_config_is_disabled_until_th"), 4, 98, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_toggle_custom_hp_hud"), 174, 48, -16777216);
 		if (ConfigCheckForOPProcedure.execute(entity))
-			this.font.draw(ms, ConfigShowDiffProcedure.execute(world), 64, 78, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_toggle_custom_hp_hud"), 174, 47, -16777216);
-		if (ConfigCheckForOPProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_mob_base_hp_mults"), 4, 109, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_mob_base_hp_mults"), 4, 110, -16777216);
 	}
 
 	@Override
@@ -157,7 +160,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_4);
-		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.config.button_x"), e -> {
+		button_x = new Button(this.leftPos + 216, this.topPos + 4, 30, 20, Component.translatable("gui.engies_chaos.config.button_x"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -184,7 +187,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_toggle_off1);
-		button_empty = new Button(this.leftPos + 219, this.topPos + 143, 28, 20, Component.translatable("gui.engies_chaos.config.button_empty"), e -> {
+		button_empty = new Button(this.leftPos + 218, this.topPos + 142, 28, 20, Component.translatable("gui.engies_chaos.config.button_empty"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -193,7 +196,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_empty);
-		button_empty1 = new Button(this.leftPos + 3, this.topPos + 143, 28, 20, Component.translatable("gui.engies_chaos.config.button_empty1"), e -> {
+		button_empty1 = new Button(this.leftPos + 4, this.topPos + 142, 28, 20, Component.translatable("gui.engies_chaos.config.button_empty1"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -292,6 +295,24 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_off);
+		imagebutton_denymark = new ImageButton(this.leftPos + 230, this.topPos + 125, 16, 16, 0, 0, 16, new ResourceLocation("engies_chaos:textures/screens/atlas/imagebutton_denymark.png"), 16, 32, e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (EngiesTrueWrathToggleOffProcedure.execute(world, entity)) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(19, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 19, x, y, z);
+			}
+		});
+		this.addRenderableWidget(imagebutton_denymark);
+		imagebutton_checkmark = new ImageButton(this.leftPos + 230, this.topPos + 125, 16, 16, 0, 0, 16, new ResourceLocation("engies_chaos:textures/screens/atlas/imagebutton_checkmark.png"), 16, 32, e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (EngiesTrueWrathToggleOnProcedure.execute(world, entity)) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(20, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 20, x, y, z);
+			}
+		});
+		this.addRenderableWidget(imagebutton_checkmark);
 	}
 
 	@Override
@@ -308,5 +329,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 		this.button_untrack1.visible = ConfigButton9ShowProcedure.execute(entity);
 		this.button_off1.visible = MobHPBaseMultToggledOffCheckProcedure.execute(world, entity);
 		this.button_off.visible = MobHPBaseMultToggledOnCheckProcedure.execute(world, entity);
+		this.imagebutton_denymark.visible = EngiesTrueWrathToggleOffProcedure.execute(world, entity);
+		this.imagebutton_checkmark.visible = EngiesTrueWrathToggleOnProcedure.execute(world, entity);
 	}
 }

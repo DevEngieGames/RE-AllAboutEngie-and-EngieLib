@@ -1,0 +1,38 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_beta_build_expect_bugs",
+          "text": {
+            "fixedValue": "!! YOU ARE RUNNING AN ENGIE'S CHAOS BETA BUILD, EXPECT BUGS TO HAPPEN !!"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 228,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "IngameMenu",
+    "displayCondition": {
+      "name": "BetaBuildDisplay"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

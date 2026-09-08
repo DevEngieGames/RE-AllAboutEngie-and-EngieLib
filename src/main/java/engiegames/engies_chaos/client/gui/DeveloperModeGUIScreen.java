@@ -73,19 +73,19 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 		statclocknum.render(ms, mouseX, mouseY, partialTicks);
 		number.render(ms, mouseX, mouseY, partialTicks);
 		boolean customTooltipShown = false;
-		if (mouseX > leftPos + 128 && mouseX < leftPos + 152 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+		if (mouseX > leftPos + 128 && mouseX < leftPos + 152 && mouseY > topPos + 11 && mouseY < topPos + 35) {
 			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_50525"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
-		if (mouseX > leftPos + 152 && mouseX < leftPos + 176 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+		if (mouseX > leftPos + 152 && mouseX < leftPos + 176 && mouseY > topPos + 11 && mouseY < topPos + 35) {
 			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_101050"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
-		if (mouseX > leftPos + 176 && mouseX < leftPos + 200 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+		if (mouseX > leftPos + 176 && mouseX < leftPos + 200 && mouseY > topPos + 11 && mouseY < topPos + 35) {
 			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_151575"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
-		if (mouseX > leftPos + 206 && mouseX < leftPos + 230 && mouseY > topPos + 53 && mouseY < topPos + 77) {
+		if (mouseX > leftPos + 206 && mouseX < leftPos + 230 && mouseY > topPos + 55 && mouseY < topPos + 79) {
 			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_input_item_here"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
@@ -127,14 +127,14 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 3, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 4, -16777216);
 		this.font.draw(ms, StunRadiusGetForDevGUIProcedure.execute(world), 129, 139, -16777216);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		statclocknum = new EditBox(this.font, this.leftPos + 9, this.topPos + 11, 118, 18, Component.translatable("gui.engies_chaos.developer_mode_gui.statclocknum"));
+		statclocknum = new EditBox(this.font, this.leftPos + 9, this.topPos + 14, 118, 18, Component.translatable("gui.engies_chaos.developer_mode_gui.statclocknum"));
 		statclocknum.setMaxLength(8192);
 		statclocknum.setResponder(content -> {
 			if (!menuStateUpdateActive)
@@ -168,7 +168,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_lower);
-		button_heal_self = new Button(this.leftPos + 6, this.topPos + 55, 77, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_heal_self"), e -> {
+		button_heal_self = new Button(this.leftPos + 6, this.topPos + 56, 77, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_heal_self"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -186,7 +186,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_set_difficulty);
-		button_duplicate_item = new Button(this.leftPos + 97, this.topPos + 55, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_duplicate_item"), e -> {
+		button_duplicate_item = new Button(this.leftPos + 97, this.topPos + 56, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_duplicate_item"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -231,7 +231,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_toggle_special_health);
-		button_confirm_stat_clock_number_count = new Button(this.leftPos + 8, this.topPos + 32, 192, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_confirm_stat_clock_number_count"), e -> {
+		button_confirm_stat_clock_number_count = new Button(this.leftPos + 8, this.topPos + 35, 192, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_confirm_stat_clock_number_count"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
